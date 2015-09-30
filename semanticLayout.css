@@ -29,7 +29,7 @@ body {
 	float: right;
 }
 
-.sidebar {
+aside {
 	width: 150px;
 	background-color: #3366CC;
 	border: 4px solid blue;
@@ -38,7 +38,7 @@ body {
 	float: left;
 }
 
-.article{
+article {
 	border: 4px solid #1D2475;
 	border-radius: 15px;
 	background-color: #CCCCCC;
@@ -47,11 +47,11 @@ body {
 	margin-left: 180px;
 }
 
-.article h2 {
+article h2 {
 	border-bottom: 2px dashed blue;
 	text-align: right;
 }
 
-.page div *:hover {
+div *:hover {
 	background-color: #FFFF00;
 }
