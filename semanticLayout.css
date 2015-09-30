@@ -52,6 +52,6 @@ article h2 {
 	text-align: right;
 }
 
-div *:hover {
+div * *:hover {
 	background-color: #FFFF00;
 }
