@@ -44,7 +44,10 @@ body {
 	background-color: #CCCCCC;
 	padding: 5px;
 	margin-top: 10px;
-	margin-left: 180px;
+}
+
+.section {
+	overflow: hidden;
 }
 
 .article h2 {
@@ -52,6 +55,6 @@ body {
 	text-align: right;
 }
 
-.page div *:hover {
+.page div div *:hover {
 	background-color: #FFFF00;
 }
