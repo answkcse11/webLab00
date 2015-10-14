@@ -1,0 +1,326 @@
+/*
+// name : 지영현
+// student id : 2011036920
+*/
+
+body {
+	font-family: Brown verdana sans-serif;
+	margin: 0px;
+}
+
+header {
+	background-color: black;
+	overflow: hidden;
+	color: white;
+}
+
+body > div:not(header):not(footer) {
+	max-width: 1024px;
+	margin: auto;
+}
+
+header > div {
+	max-width: 1024px;
+	margin: auto;
+}
+
+header div * {
+	font-size: 15px;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	padding-right: 30px;
+}
+
+header > div > *:not(#MF) {
+	float: left;
+}
+
+header > div #MF {
+	color: #ff6567;
+	float: right;
+}
+
+header > div > *:hover {
+	color: #1cace2;
+	cursor: pointer;
+}
+
+div #brand {
+	overflow: hidden;
+	padding-top: 32px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+
+#brand img {
+	width: 300px;
+	height: 62px;
+}
+
+#brand > div {
+	margin-top: 45px;
+	float: right;
+}
+
+#brand > div a {
+	text-decoration: none;
+}
+
+nav + div {
+	text-align: center;
+}
+
+nav div {
+	float: left;
+	border: 1px #D9D9D8 solid;
+}
+
+nav div:not(#search-wrap) {
+	padding-top: 0.65em;
+	padding-bottom: 0.65em;
+	padding-left: 0.72em;
+	padding-right: 0.72em;
+	border-right: 1px white solid;
+}
+
+nav div:not(#search-wrap):hover {
+	border: 1px black solid;
+	box-shadow: 0 0 0 1px black inset;
+}
+
+#weekbar {
+	background-color: black;
+	overflow: hidden;
+	color: white;
+}
+
+#weekbar p {
+	text-align: center;
+}
+
+#weekbar > div {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#weekbar > div * {
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	border-radius: 50%;
+	font-size: 1.25em;
+	float: left;
+	text-align: center;
+}
+
+#weekbar > div #facebook {
+	background-color: #3B5998;
+}
+
+#weekbar > div #twitter {
+	background-color: #55ACEE;
+	margin-left: 0.25em;
+}
+
+aside {
+	background-color: black;
+	color: white;
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 300px;
+	float: right;
+}
+
+aside > div:nth-child(1) {
+	background-color: #484647;
+	padding: 0.75em;
+}
+
+aside > div:nth-child(1) i {
+	color: black;
+}
+
+aside .barrow {
+	height: 100px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px #989898 solid;
+}
+
+.barrow > div:nth-child(1) {
+	color: #989898;
+	padding: 0.75em;
+}
+
+.barrow > div:nth-child(2) {
+	width: 45px;
+	font-size: 2em;
+	margin-top: 6px;
+	text-align: center;
+	display: inline;
+}
+
+aside img {
+	width: 2.5em;
+	height: 2.5em;
+	margin: 6px;
+	float: left;
+}
+
+.barrow div:nth-child(3) {
+	width: 192px;
+	margin: 0px;
+}
+
+aside p {
+	margin: 0px;
+}
+
+aside p span {
+	display: block;
+}
+
+.barrow span:nth-child(1) {
+	font-size: 1em;
+}
+
+.barrow span:nth-child(2) {
+	font-size: 12px;
+	color: #1cace2;
+}
+
+aside .fa-play {
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	border: 2px white solid;
+	border-radius: 50%;
+	font-size: 15px;
+	margin-top: 5px;
+	text-align: center;
+}
+
+.barrow > div:not(:nth-child(1)) {
+	float: left;
+}
+
+article {
+	clear: left;
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+article > div {
+	height: 104px;
+	border-top: 1px #CDCDCD solid;
+	border-bottom: 1px white solid;
+	overflow: hidden;
+}
+
+article > div:hover {
+	border-color: black;
+}
+
+article > div > div:not(.play) {
+	float: left;
+}
+
+article span {
+	display: block;
+}
+
+.mainrow > div:nth-child(1) {
+	width: 34px;
+	line-height: 104px;
+	text-align: center;
+	color: #8C8E90;
+	background-color: rgb(231,231,231);
+}
+
+article .fa-arrow-up {
+	color: #05C648;
+}
+
+article .fa-arrow-down {
+	color: #f93c33;
+}
+
+article .mainrow > div:nth-child(2) {
+	width: 100px;
+	margin: 10px;
+	margin-bottom: 0px;
+}
+
+article .mainrow > div:nth-child(2) > span:nth-child(1) {
+	font-size: 62px;
+	text-align: center;
+}
+
+article .mainrow > div:nth-child(2) > span:nth-child(2) {
+	font-size: 12.4px;
+	color: #989898;
+	line-height: 1;
+}
+
+article img {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	margin-right: 12px;
+	width: 91px;
+	height: 91px;
+	float: left;
+}
+
+article p {
+	float: left;
+}
+
+article span {
+	display: block;
+}
+
+article p span:nth-child(1) {
+	font-size: 24px;
+}
+
+article p span:nth-child(2) {
+	font-size: 16px;
+	color: #1CACE2;
+}
+
+article p span:nth-child(2):hover, .barrow span:nth-child(2):hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+article .fa-play {
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	border: 2px black solid;
+	border-radius: 50%;
+	font-size: 15px;
+	margin-top: 15px;
+	margin-right: 10px;
+	text-align: center;
+}
+
+.fa-play:hover {
+	color: #1CACE2;
+	cursor: pointer;
+}
+
+article .play {
+	float: right;
+}
+
+footer {
+	background-color: black;
+	overflow: hidden;
+}
+
+footer div {
+	float: right;
+}
