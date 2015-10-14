@@ -15,8 +15,8 @@
             $lines = file($filename);
             $size = filesize($filename);
             $count = count($lines);
-            print "My dictionary has $count total words and size of $size bytes.";
         ?>
+            My dictionary has <?=$count?> total words and size of <?=$size?> bytes.
     </p>
 </div>
 <div class="article">
@@ -24,7 +24,7 @@
         <h2>Today's words</h2>
 <!-- Ex. 2: Today’s Words & Ex 6: Query Parameters -->
         <?php
-            if(isset($_GET["number_of_words"])) {
+            if(isset($_GET["number_of_words"]) && $_GET["number_of_words"] != NULL) {
                 $numberOfWords = $_GET["number_of_words"];
             } else {
                 $numberOfWords = 3;
@@ -60,7 +60,7 @@
         <h2>Searching Words</h2>
 <!-- Ex. 3: Searching Words & Ex 6: Query Parameters -->
         <?php
-            if(isset($_GET["character"])) {
+            if(isset($_GET["character"]) && $_GET["character"] != NULL) {
                 $startCharacter = $_GET["character"];
             } else {
                 $startCharacter = "C";
@@ -95,7 +95,7 @@
         <h2>List of Words</h2>
 <!-- Ex. 4: List of Words & Ex 6: Query Parameters -->
         <?php
-            if(isset($_GET["orderby"])) {
+            if(isset($_GET["orderby"]) && $_GET["orderby"] != NULL) {
                 $orderby = $_GET["orderby"];
             } else {
                 $orderby = 0;
@@ -118,6 +118,7 @@
             <p>
                 All of words ordered by <strong>alphabetical <?=$order?> order</strong> are followings :
             </p>
+            <ol>
         <?php
             $resultArray = getWordsByOrder($lines, $orderby);
             foreach($lines as $word) {
@@ -129,15 +130,18 @@
                     }
         ?>
                     <li<?=$class?>> <?=$wordArray[0]?> -  <?=$wordArray[1]?> </li>
+                
         <?php
             }
         ?>
+            </ol>
     </div>
     <div class="section">
         <h2>Adding Words</h2>
 <!-- Ex. 5: Adding Words & Ex 6: Query Parameters -->
         <?php
-            if(isset($_GET["new_word"]) && isset($_GET["meaning"])) {
+            if(isset($_GET["new_word"]) && isset($_GET["meaning"])
+                 && $_GET["new_word"] != NULL && $_GET["meaning"] != NULL) {
                 $newWord = $_GET["new_word"];
                 $meaning = $_GET["meaning"];
             }
