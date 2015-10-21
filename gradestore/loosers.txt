@@ -1,0 +1,8 @@
+adsfsad  --   ;asdfasdf;5123456787654323;mastercard
+adsfsad  --   ;asdfasdf;5123456787654323;mastercard
+asdfa --    ;sdf;4123456778898765;visa
+asdf     asdf    ;sdfsd;4123456787654323;visa
+aa---aa;asdf;4123456789098765;visa
+aa---aa a;asdf;4123456789098765;visa
+aa-aa a;asdf;4123456789098765;visa
+a a;asdf;4123456789098765;visa
