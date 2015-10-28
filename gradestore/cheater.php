@@ -34,7 +34,7 @@
 		<?php
 		# Ex 5 : 
 		# Check if the name is composed of alphabets, dash(-), or a single white space.
-		} elseif (!(preg_match("/^[a-zA-Z]-?([a-zA-Z]+-?)*\s?([a-zA-Z]+-?)*[a-zA-Z]$/", $_POST["name"]))) { 
+		} elseif (!(preg_match("/^[a-zA-Z]-?([a-zA-Z]+-?)*[a-zA-Z]\s?([a-zA-Z]+-?)*[a-zA-Z]$/", $_POST["name"]))) { 
 		?>
 
 		<!-- Ex 5 : 
