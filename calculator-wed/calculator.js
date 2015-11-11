@@ -73,9 +73,9 @@ function calculator(s) {
     for (var i=0; i< s.length; i++) {
         if(i%2==0) { //at even times
             if(operator = "+") {
-                result = s.pop() + result;
+                result = parseFloat(s.pop()) + result;
             } else if(operator = "-") {
-                result = s.pop() - result;
+                result = parseFloat(s.pop()) - result;
             }
         } else { //at odd times
             operator = s.pop();
