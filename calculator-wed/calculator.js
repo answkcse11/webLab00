@@ -5,22 +5,36 @@ window.onload = function () {
     for (var i in $$('button')) {
         $$('button')[i].onclick = function () {
             var value = this.innerHTML;
+            if(stack[stack.length-1]=="=") {
+                stack = [];
+                displayVal = "0";
+                document.getElementById('expression').innerHTML = "0";
+            }
             if(value=="AC") {
                 displayVal = "0";
                 stack = [];
                 document.getElementById('expression').innerHTML = "0";
             } else if(/^\d$/.test(value)) {
-                if(displayVal.charAt(0)=="0") {
-                    displayVal = value;
+                if(stack[stack.length-1]=="!") {
+                    alert("ERROR : input operator right after input !(factorial)");
                 } else {
-                    displayVal += value;
+                    if(displayVal.charAt(0)=="0") {
+                        displayVal = value;
+                    } else {
+                        displayVal += value;
+                    }
                 }
             } else if(value==".") {
                 if(!(/.\.?./.test(displayVal))) {
                     displayVal += value;
                 }
             } else {
-                stack.push(displayVal);
+                if(stack[stack.length-1]=="!") {
+                    stack.pop();
+                    displayVal = "";
+                } else {
+                   stack.push(parseFloat(displayVal));
+                }
                 var displayExp;
                 displayExp = displayVal + value;
                 if(document.getElementById('expression').innerHTML.charAt(0)=="0") {
@@ -29,14 +43,16 @@ window.onload = function () {
                     document.getElementById('expression').innerHTML += displayExp;    
                 }
                 displayVal = "0";
-                if(/^[\/\*\^]&/.test(stack[stack.length-2])) {
+                if(/(\/|\*|\^)/.test(stack[stack.length-2])) {
                     highPriorityCalculator(stack, value);
-                } else if(value=="!") {
+                }
+                if(value=="!") {
                     stack.push(parseFloat(factorial(stack.pop())));
+                    stack.push(value);
                 } else if(value=="=") {
                     displayVal = calculator(stack);
+                    stack.push(value);
                 } else {
-                    stack.push(parseFloat(displayVal));
                     stack.push(value);
                 }
             }
@@ -65,17 +81,19 @@ function highPriorityCalculator(s, val) {
         result = Math.pow(opernand1, opernand2);
     }
     s.push(parseFloat(result));
-    s.push(val);
 }
 function calculator(s) {
     var result = 0;
     var operator = "+";
-    for (var i=0; i< s.length; i++) {
+
+    s.reverse();
+    var iter = s.length;
+    for (var i=0; i< iter; i++) {
         if(i%2==0) { //at even times
-            if(operator = "+") {
-                result = parseFloat(s.pop()) + result;
-            } else if(operator = "-") {
-                result = parseFloat(s.pop()) - result;
+            if(operator == "+") {
+                result = result + parseFloat(s.pop());
+            } else if(operator == "-") {
+                result = result - parseFloat(s.pop());
             }
         } else { //at odd times
             operator = s.pop();
