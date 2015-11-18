@@ -90,8 +90,8 @@ function selectToResult(){
 	}
 	var anstotal = $("answer").innerHTML;
 	anscount += parseInt(anstotal.substring(0,1));
-	totalcount += parseInt(anstotal.substring(2,3));
-	var text = anscount.toString().concat("/").concat(totalcount.toString());
+	totalcount += parseInt(anstotal.substring(2,anstotal.length));
+	anstotal = anscount.toString().concat("/").concat(totalcount.toString());
 	$("answer").innerHTML = text;
 	timer = setTimeout(startToSetTarget, interval);
 }
