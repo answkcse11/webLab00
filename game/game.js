@@ -81,14 +81,18 @@ function showToSelect(){
 
 function selectToResult(){
 	$("state").innerHTML = "Checking!";
-	var i, anscount=0, totalcount;
+	var i, anscount=0, totalcount=3;
 	for(i=0; i<selectedBlocks.length; i++)
 		($$("div.block")[(selectedBlocks[i])]).removeClassName("selected");
 	for(i=0; i<3; i++) {
 		if(selectedBlocks.indexOf(targetBlocks[i])!=-1)
 			anscount++;
 	}
-	var anstotal = $("answer").firstChild();
+	var anstotal = $("answer").innerHTML;
+	anscount += parseInt(anstotal.substring(0,1));
+	totalcount += parseInt(anstotal.substring(2,3));
+	var text = anscount.toString().concat("/").concat(totalcount.toString());
+	$("answer").innerHTML = text;
 	timer = setTimeout(startToSetTarget, interval);
 }
 
