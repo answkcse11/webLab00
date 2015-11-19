@@ -1,5 +1,5 @@
 "use strict"
-var interval = 3000;
+var interval = 2000;
 var numberOfBlocks = 9;
 var numberOfTarget = 3;
 var targetBlocks = [];
@@ -82,6 +82,8 @@ function showToSelect(){
 function selectToResult(){
 	$("state").innerHTML = "Checking!";
 	var i, anscount=0, totalcount=3;
+	for(i=0; i<numberOfBlocks.length; i++)
+		$("div.block")[i].stopObserving();
 	for(i=0; i<selectedBlocks.length; i++)
 		($$("div.block")[(selectedBlocks[i])]).removeClassName("selected");
 	for(i=0; i<3; i++) {
@@ -89,10 +91,10 @@ function selectToResult(){
 			anscount++;
 	}
 	var anstotal = $("answer").innerHTML;
-	anscount += parseInt(anstotal.substring(0,1));
-	totalcount += parseInt(anstotal.substring(2,anstotal.length));
+	anscount += parseInt(anstotal.substring(0,anstotal.indexOf("/")));
+	totalcount += parseInt(anstotal.substring(anstotal.indexOf("/")+1,anstotal.length));
 	anstotal = anscount.toString().concat("/").concat(totalcount.toString());
-	$("answer").innerHTML = text;
+	$("answer").innerHTML = anstotal;
 	timer = setTimeout(startToSetTarget, interval);
 }
 
