@@ -33,7 +33,7 @@ for ($j = 1; $j <= $top; $j++) {
 			print "\t\t<artist>$artist</artist>\n";
 			print "\t\t<genre>$genre</genre>\n";
 			print "\t\t<time>$time</time>\n";
-			print "\t</song>\n";		
+			print "\t</song>\n";
 		}
 	}	
 }
