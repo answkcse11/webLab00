@@ -8,7 +8,7 @@ var loser = null;  // whether the user has hit a wall
 
 window.onload = function() {
 	$("start").onclick = startClick;
-}
+};
 
 // called when mouse enters the walls; 
 // signals the end of the game with a loss
@@ -25,11 +25,13 @@ function overBoundary(event) {
 // sets the maze back to its initial playable state
 function startClick() {
 	var boundaries = $$("div.boundary");
-	for (var i=0; i<boundaries.length; i++)
+	for (var i=0; i<boundaries.length; i++) {
 		boundaries[i].onmouseover = overBoundary;
+	}
 	var outside = $$("body > :not(#maze)");
-	for (var i=0; i<outside.length; i++)
+	for (var i=0; i<outside.length; i++) {
 		outside[i].onmouseover = overBoundary;
+	}
 	$("end").onmouseover = overEnd;
 
 	var array = $$("div.boundary:not(.example)");
@@ -53,11 +55,13 @@ function overEnd() {
 	}
 	
 	var boundaries = $$("div.boundary");
-	for (var i=0; i<boundaries.length; i++)
+	for (var i=0; i<boundaries.length; i++) {
 		boundaries[i].onmouseover = null;
+	}
 	var outside = $$("body > :not(#maze)");
-	for (var i=0; i<outside.length; i++)
+	for (var i=0; i<outside.length; i++) {
 		outside[i].onmouseover = null;
+	}
 	$("end").onmouseover = null;
 }
 
