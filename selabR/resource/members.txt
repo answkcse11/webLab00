@@ -1,0 +1,3 @@
+gayeonkim91@gmail.com;notrealpassword;Gayeon Kim;Master;Web Application Development, Model Checking;JavaScript
+naver@jlh7020.com;navercom;naver;undergraduate;Web Application Development;C
+hello@hanyang.ac.kr;qwer1234;hello;undergraduate;Web Application Development, Logical Fundamentals of Programming, Model Checking;PHP
