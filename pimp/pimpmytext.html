@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Pimp My Text!</title>
-		<link href="http://selab.hanyang.ac.kr/courses/cse326/2015/problemss/pResources/pimpmytext.css" type="text/css" rel="stylesheet" />
+		<link href="http://selab.hanyang.ac.kr/courses/cse326/2015/problems/pResources/pimpmytext.css" type="text/css" rel="stylesheet" />
 
 		<!-- This is a widely-used JavaScript library named Prototype that has 
 			 many useful functions, including the $() function, which we need.
@@ -26,9 +26,11 @@
 		
 		<fieldset>
 			<legend>Pimp It</legend>
-			<button onclick="onClick();">Bigger Pimpin?</button>
+			<button onclick="onClick();">Bigger Pimpin'!</button>
 			<br />
-			<label><input type="checkbox" />Bling</label>
+			<label><input onchange="onChange();" type="checkbox" id="bling" />Bling</label>
+			<br />
+			<button onclick="snoopify();">Snoopify</button>
 		</fieldset>
 	</body>
 </html>
